@@ -12,9 +12,13 @@ You need the docker-compose.yml from this project to building this multiple cont
 **needed structure**:
 
 fullstack-project-folder
+
 |-backend folder
+
 |-frontend folder 
+
 |-infrastructure folder
+
 
 ## info about: database - postgres
 
