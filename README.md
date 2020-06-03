@@ -9,10 +9,17 @@ started with docker-compose file
 
 You need the docker-compose.yml from this project to building this multiple container application.
 
-# info about: database - postgres
+**needed structure**:
 
-# info about: database user interface - pgadmin4
+fullstack-project-folder
+|-backend folder
+|-frontend folder 
+|-infrastructure folder
 
-# info about: backend - spring boot
+## info about: database - postgres
 
-# info about: frontend - angular 
+## info about: database user interface - pgadmin4
+
+## info about: backend - spring boot
+
+## info about: frontend - angular 
