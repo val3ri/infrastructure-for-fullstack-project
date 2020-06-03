@@ -1,0 +1,60 @@
+version: '3'
+services:
+  postgres:
+    image: postgres
+    container_name: postgres
+    restart: always
+    environment:
+    # default user is "postgres"
+      POSTGRES_PASSWORD: admin
+    ports:
+      - "5432:5432"
+    networks: 
+      - fullstack-tool-network
+
+  # when connecting to postgres use as "hostname/adress" - "postgres"
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin4
+    links:
+      - postgres
+    depends_on:
+      - postgres
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "5050:80"
+    networks:
+      - fullstack-tool-network
+
+  springbootapp:
+    build: ../springboot-project-template/
+    container_name: backend
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    links:
+      - postgres
+    networks:
+      - fullstack-tool-network
+
+  angularapp:
+    container_name: ui
+    build: ../angular-project-template/
+    ports:
+      - "4200:80"
+    restart: unless-stopped
+    depends_on:
+      - springbootapp
+    links:
+      - springbootapp
+    networks:
+      - fullstack-tool-network
+
+networks:
+  fullstack-tool-network:
+    driver: bridge
+  
