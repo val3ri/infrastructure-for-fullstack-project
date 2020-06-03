@@ -29,6 +29,7 @@ services:
       - fullstack-tool-network
 
   springbootapp:
+    image: springbootapp:latest
     build: ../springboot-project-template/
     container_name: backend
     ports:
@@ -42,6 +43,7 @@ services:
       - fullstack-tool-network
 
   angularapp:
+    image: angularapp:latest
     container_name: ui
     build: ../angular-project-template/
     ports:
