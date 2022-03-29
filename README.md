@@ -36,12 +36,11 @@ fullstack-project-folder
 - Spring Boot
 - nginx
 - npm
-- Maven
+- Maven Wrapper
 
 ## Required Software for starting the the application
 - [Angular cli](https://cli.angular.io/)
 - [Docker](https://www.docker.com/products/docker-desktop)
-- [Maven](https://maven.apache.org/)
 - [npm](https://www.npmjs.com/get-npm)
 
 ## Steps for "prod" deployment
@@ -51,9 +50,9 @@ ng build
 ```
 creates the **dist** folder in the angular project
 
-- building spring boot jar
+- building spring boot jar - for this step we are using maven wrapper for convinience
 ```
-mvn package
+./mvnw package
 ```
 that is the command line solution, but you can also do it straight with your IDE
 
