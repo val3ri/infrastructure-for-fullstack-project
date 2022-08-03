@@ -60,7 +60,7 @@ that is the command line solution, but you can also do it straight with your IDE
 ```
 docker-compose up
 ```
-that will startthe multiple container application, creating all of the 4 containers (only if you already create the right project structure like in the picture above!)
+that will start the multiple container application, creating all of the 4 containers (only if you already create the right project structure like in the picture above!)
 
 ## Steps for running the the backend or/and frontend application/s locally
 work in progress :writing_hand:
